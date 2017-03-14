@@ -14,13 +14,20 @@
   },
   "homepage": "https://github.com/aem/jsx-playground#readme",
   "scripts": {
+    "start": "babel-node --plugins transform-react-jsx example0.js",
+    "print-react": "babel --plugins transform-react-jsx example0.js",
     "example1": "babel-node --plugins transform-react-jsx example1.js",
     "example2": "babel-node --plugins transform-react-jsx example2.js",
-    "example3": "babel-node --plugins transform-react-jsx example3.js"
+    "example3": "babel-node --plugins transform-react-jsx example3.js",
+    "example4": "babel-node --plugins=transform-react-jsx,transform-object-rest-spread example4.js",
+    "example5": "babel-node --plugins=transform-react-jsx example5.js"
   },
   "dependencies": {
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
-    "babel-plugin-transform-react-jsx": "^6.23.0"
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }
