@@ -14,7 +14,9 @@
   },
   "homepage": "https://github.com/aem/jsx-playground#readme",
   "scripts": {
-    "start": "babel-node --plugins transform-react-jsx index.js"
+    "example1": "babel-node --plugins transform-react-jsx example1.js",
+    "example2": "babel-node --plugins transform-react-jsx example2.js",
+    "example3": "babel-node --plugins transform-react-jsx example3.js"
   },
   "dependencies": {
     "babel-cli": "^6.24.0",
