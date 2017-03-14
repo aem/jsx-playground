@@ -1,0 +1,24 @@
+{
+  "name": "jsx-playground",
+  "version": "0.1.0",
+  "description": "Playing with JSX",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aem/jsx-playground.git"
+  },
+  "author": "aem <amarkon895@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aem/jsx-playground/issues"
+  },
+  "homepage": "https://github.com/aem/jsx-playground#readme",
+  "scripts": {
+    "start": "babel-node --plugins transform-react-jsx index.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-plugin-transform-react-jsx": "^6.23.0"
+  }
+}
