@@ -1,16 +1,20 @@
-/* @jsx execute */
+/* @jsx accumulateProps */
 
-const execute = (fun, props) => (props.shouldExecute) ? fun() : undefined
+const accumulateProps = (fun, props, children) => {
+  return {
+    ...props,
+    children
+  }
+}
 
-const SayHello = () => { console.log("Hello!") }
+const empty = () => {  }
 
 const getContent = () => {
-  return <SayHello shouldExecute={true} />
+  return (
+    <empty level1={"top level component"}>
+      <empty level2={"this one is nested"} />
+    </empty>
+  );
 }
 
-const getOtherContent = () => {
-  return <SayHello shouldExecute={false} />
-}
-
-getContent()
-getOtherContent()
+console.log(getContent())

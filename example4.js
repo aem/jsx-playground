@@ -1,19 +1,18 @@
-/* @jsx accumulateProps */
+/* @jsx compileMathOps */
 
-const accumulateProps = (fun, props, children) => {
-  return {
-    ...props,
-    children
-  }
-}
+const compileMathOps = (fun, {value}, children) => fun(value, children)
 
-const empty = () => {  }
+const Add = (val1, val2) => val1 + (val2 || val1)
+const Subtract = (val1, val2) => val2 - val1
+const Square = (value, rest) => value * value + (rest || 0)
 
 const getContent = () => {
   return (
-    <empty level1={"top level component"}>
-      <empty level2={"this one is nested"} />
-    </empty>
+    <Subtract value={10}>
+      <Add value={5}>
+        <Square value={6} />
+      </Add>
+    </Subtract>
   );
 }
 
