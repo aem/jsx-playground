@@ -7,12 +7,9 @@ class Schema {
 
   validate(obj, schema = this.schema) {
     for (let key of Object.keys(obj)) {
-      if (typeof obj[key] !== schema[key]) {
-        if (typeof schema[key] === 'string') {
-          return false
-        } else if (typeof schema[key] === Type.object) {
-          return this.validate(obj[key], schema[key])
-        }
+      if (typeof obj[key] !== schema[key] && !(schema[key] === Type.array && Array.isArray(obj[key]))) {
+        if (typeof schema[key] === 'string') return false
+        if (typeof schema[key] === Type.object) return this.validate(obj[key], schema[key])
       }
     }
     return true
@@ -55,6 +52,7 @@ const dataModel = () => (
       firstName={Type.string}
       lastName={Type.string}
       address={Type.object}
+      friends={Type.array}
     >
       <map
         name="address"
@@ -74,6 +72,7 @@ console.log(model.validate({
   id: 1,
   firstName: 'John',
   lastName: 'Smith',
+  friends: [2, 3, 4],
   address: {
     street: '123 Main Street',
     street2: 'Apt 1',
@@ -86,6 +85,7 @@ console.log(model.validate({
   id: 1,
   firstName: 'John',
   lastName: 'Smith',
+  friends: [2, 3, 4],
   address: {
     street: '123 Main Street',
     street2: 'Apt 1',
