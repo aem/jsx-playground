@@ -43,3 +43,4 @@ This project was created to go along with a talk given to the April 2017 DublinJ
 2. `npm run example2` Take advantage of the function itself that was used to create the component by executing it and then printing props.
 3. `npm run example3` Adding in nested components now. Accumulates the props of the nested components and print them.
 4. `npm run example4` First look at "useful" JSX. Create fully composeable mathematical operation components
+5. `npm run example5` Now that we've seen a somewhat-functional usecase, let's do something practical. Example 5 is a functional (very very alpha) DDL that allows the client to declare data schemas via JSX, creating a visual representation of data structure. 
