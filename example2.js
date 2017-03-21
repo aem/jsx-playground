@@ -1,14 +1,18 @@
-/* @jsx printPropsAndExecute */
+/* @jsx accumulateProps */
 
-const printPropsAndExecute = (fun, props) => {
-  fun()
-  console.log(props)
+const accumulateProps = (fun, props, children) => {
+  return {
+    ...props,
+    children
+  }
 }
-
-const SayHello = () => { console.log("Hello!") }
 
 const getContent = () => {
-  return <SayHello arg1={true} />
+  return (
+    <null level1={"top level component"}>
+      <null level2={"this one is nested"} />
+    </null>
+  );
 }
 
-getContent()
+console.log(getContent())
