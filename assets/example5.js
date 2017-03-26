@@ -88,9 +88,9 @@ const dataModel = () => (
   </Schema>
 )
 
-const model = dataModel()
-console.log(model)
-console.log(model.validate({
+const schema = dataModel()
+console.log(schema)
+console.log(schema.validate({
   id: 1,
   firstName: 'John',
   lastName: 'Smith',
@@ -103,7 +103,7 @@ console.log(model.validate({
     postalCode: '12345'
   }
 }))
-console.log(model.validate({
+console.log(schema.validate({
   id: 1,
   firstName: 'John',
   lastName: 'Smith',
