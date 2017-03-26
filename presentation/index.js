@@ -71,7 +71,7 @@ export default class Presentation extends React.Component {
           ]}
         />
         <Slide>
-          <Image src={require('../assets/example0.gif')} />
+          <Image width={1000} src={require('../assets/example0.gif')} />
        </Slide>
         <CodeSlide
           transition={[]}
@@ -95,7 +95,7 @@ export default class Presentation extends React.Component {
           ]}
         />
         <Slide>
-          <Image src={require('../assets/example1.gif')} />
+          <Image width={1000} src={require('../assets/example1.gif')} />
         </Slide>
         <CodeSlide
           transition={[]}
@@ -110,7 +110,7 @@ export default class Presentation extends React.Component {
           ]}
         />
         <Slide>
-          <Image src={require('../assets/example2.gif')} />
+          <Image width={1000} src={require('../assets/example2.gif')} />
         </Slide>
         <CodeSlide
           transition={[]}
@@ -126,7 +126,7 @@ export default class Presentation extends React.Component {
           ]}
         />
         <Slide>
-          <Image src={require('../assets/example3.gif')} />
+          <Image width={1000} src={require('../assets/example3.gif')} />
         </Slide>
         <CodeSlide
           transition={[]}
@@ -142,7 +142,7 @@ export default class Presentation extends React.Component {
           ]}
         />
         <Slide>
-          <Image src={require('../assets/example4.gif')} />
+          <Image width={1000} src={require('../assets/example4.gif')} />
         </Slide>
         <CodeSlide
           transition={[]}
@@ -168,7 +168,7 @@ export default class Presentation extends React.Component {
           ]}
         />
         <Slide>
-          <Image src={require('../assets/example5.gif')} />
+          <Image width={1000} src={require('../assets/example5.gif')} />
         </Slide>
         <Slide transition={[]} bgColor="primary">
           <Heading size={1} italic lineHeight={1} textColor="secondary">
