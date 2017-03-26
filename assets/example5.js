@@ -1,4 +1,4 @@
-/* @jsx buildModel */
+/* @jsx model */
 
 class Schema {
   constructor(schema) {
@@ -7,34 +7,56 @@ class Schema {
 
   validate(obj, schema = this.schema) {
     for (let key of Object.keys(obj)) {
-      if (typeof obj[key] !== schema[key] && !(schema[key] === Type.array && Array.isArray(obj[key]))) {
-        if (typeof schema[key] === 'string') return false
-        if (typeof schema[key] === Type.object) return this.validate(obj[key], schema[key])
+      if (typeof obj[key] !== schema[key] &&
+        !(schema[key] === Type.array &&
+        Array.isArray(obj[key])))
+      {
+        if (typeof schema[key] === 'string') {
+          return false
+        }
+        if (typeof schema[key] === 'object') {
+          return this.validate(
+            obj[key],
+            schema[key]
+          )
+        }
       }
     }
     return true
   }
 }
 
-const buildModel = (obj, props, children) => {
-  if (obj === Schema) return new Schema(children)
+const model = (obj, props, child) => {
+  if (obj === Schema) {
+    return new Schema(child)
+  }
   let result = {}
   switch (obj) {
     case 'map':
-      if (children && children.name) {
-        if (props[children.name] === 'object') {
-          result = Object.assign({}, props, { [children.name] : children })
+      if (child && child.name) {
+        if (props[child.name] === 'object') {
+          result = Object.assign({}, props, {
+            [child.name] : child
+          })
         } else {
-          throw new Error(`Attempted to assign object "${children.name}" to type ${props[children.name]}`)
+          throw new Error(`Attempted to assign
+           object "${child.name}" to
+            type ${props[child.name]}`
+          )
         }
       } else {
         result = props
       }
       break;
     default:
-      result = (children && children.name) ? Object.assign({}, props, { [children.name] : children }) : props
+      result = (child && child.name) ?
+        Object.assign({}, props, {
+        [child.name] : child
+      }) : props
   }
-  if (children && children.name) delete result[children.name].name
+  if (child && child.name) {
+    delete result[child.name].name
+  }
   return result
 }
 

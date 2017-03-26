@@ -1,6 +1,6 @@
-/* @jsx accumulateProps */
+/* @jsx acc */
 
-const accumulateProps = (fun, props, children) => {
+const acc = (fun, props, children) => {
   return {
     ...props,
     children
