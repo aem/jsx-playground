@@ -70,18 +70,14 @@ const Type = {
 const dataModel = () => (
   <Schema>
     <map
-      id={Type.number}
-      firstName={Type.string}
-      lastName={Type.string}
+      name={Type.string}
       address={Type.object}
       friends={Type.array}
     >
       <map
         name="address"
         street={Type.string}
-        street2={Type.string}
         city={Type.string}
-        state={Type.string}
         postalCode={Type.string}
       />
     </map>
@@ -92,27 +88,21 @@ const schema = dataModel()
 console.log(schema)
 console.log(schema.validate({
   id: 1,
-  firstName: 'John',
-  lastName: 'Smith',
+  name: 'John',
   friends: [2, 3, 4],
   address: {
     street: '123 Main Street',
-    street2: 'Apt 1',
     city: 'New York',
-    state: 'New York',
     postalCode: '12345'
   }
 }))
 console.log(schema.validate({
   id: 1,
-  firstName: 'John',
-  lastName: 'Smith',
+  name: 'John',
   friends: [2, 3, 4],
   address: {
     street: '123 Main Street',
-    street2: 'Apt 1',
     city: 'New York',
-    state: 'New York',
     postalCode: 12345
   }
 }))

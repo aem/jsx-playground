@@ -94,9 +94,6 @@ export default class Presentation extends React.Component {
             { loc: [3, 4] }
           ]}
         />
-        <Slide>
-          <Image width={1000} src={require('../assets/example1.gif')} />
-        </Slide>
         <CodeSlide
           transition={[]}
           lang="js"
@@ -115,56 +112,18 @@ export default class Presentation extends React.Component {
         <CodeSlide
           transition={[]}
           lang="js"
-          code={require('raw-loader!../assets/example3.js')}
-          ranges={[
-            { loc: [0, 0], title: 'Example 3: Custom Elements' },
-            { loc: [0, 1] },
-            { loc: [2, 5] },
-            { loc: [6, 7] },
-            { loc: [8, 13] },
-            { loc: [14, 15] }
-          ]}
-        />
-        <Slide>
-          <Image width={1000} src={require('../assets/example3.gif')} />
-        </Slide>
-        <CodeSlide
-          transition={[]}
-          lang="js"
-          code={require('raw-loader!../assets/example4.js')}
-          ranges={[
-            { loc: [0, 0], title: "Example 4: Something useful!" },
-            { loc: [0, 1] },
-            { loc: [2, 5] },
-            { loc: [6, 13] },
-            { loc: [14, 23] },
-            { loc: [24, 25] }
-          ]}
-        />
-        <Slide>
-          <Image width={1000} src={require('../assets/example4.gif')} />
-        </Slide>
-        <CodeSlide
-          transition={[]}
-          lang="js"
           code={require('raw-loader!../assets/example5.js')}
           ranges={[
-            { loc: [0, 0], title: 'Example 5: Modeling' },
-            { loc: [2, 27] },
-            { loc: [3, 6] },
+            { loc: [0, 0], title: 'Example 3: Modeling' },
+            { loc: [2, 6] },
             { loc: [7, 8] },
-            { loc: [0, 1] },
             { loc: [28, 29] },
             { loc: [29, 32] },
-            { loc: [33, 37] },
-            { loc: [62, 68] },
-            { loc: [69, 89] },
-            { loc: [70, 71] },
-            { loc: [71, 78] },
-            { loc: [78, 86] },
-            { loc: [90, 92] },
-            { loc: [102, 103] },
-            { loc: [115, 116] }
+            { loc: [33, 35] },
+            { loc: [69, 85] },
+            { loc: [86, 88] },
+            { loc: [88, 98] },
+            { loc: [98, 108] }
           ]}
         />
         <Slide>

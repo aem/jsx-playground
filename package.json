@@ -16,7 +16,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
-    "deploy": "npm run clean & npm run build && surge -p .",
+    "deploy": "npm run clean & npm run build && surge",
     "start": "cross-env NODE_ENV=development node server.js",
     "example0": "babel-node --plugins transform-react-jsx assets/example0.js",
     "example0-print": "babel --plugins transform-react-jsx assets/example0.js",
